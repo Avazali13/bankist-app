@@ -60,6 +60,7 @@ const inputTransferAmount = document.querySelector('.form__input--amount');
 const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
+const date=document.querySelector('.date')
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -126,6 +127,8 @@ const updateUI = function (currentAccount) {
   displayMovements(currentAccount.movements);
   calcDisplayBalance(currentAccount);
   calcDisplaySummary(currentAccount);
+  const dates=`${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()}`;
+  date.innerHTML=dates;
 };
 
 ///
@@ -207,3 +210,8 @@ btnSort.addEventListener('click', e => {
   sorted = !sorted;
   // updateUI(currentAccount)
 });
+
+
+const dates=`${new Date().getDate()}//${new Date().getMonth()+1}/${new Date().getFullYear()}`;
+console.log(dates);
+
